@@ -144,7 +144,7 @@ else:
     vmax_val = max_val * vmax_contrast
 
 im = ax2.imshow(log_intensity, 
-                cmap='Greens_r',
+                cmap='hot',
                 vmax=vmax_val, # Usamos el valor calculado y seguro
                 extent=[-screen_size/2*100, screen_size/2*100, 
                         -screen_size/2*100, screen_size/2*100])
