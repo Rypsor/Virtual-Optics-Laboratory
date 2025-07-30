@@ -132,7 +132,7 @@ st.sidebar.slider(
 )
 st.sidebar.slider(
     "Distancia al Obstáculo (D, m)",
-    min_value=0.01, max_value=10.0,
+    min_value=1, max_value=10.0,
     step=0.01, format="%.2f",
     key="D_m"
 )
