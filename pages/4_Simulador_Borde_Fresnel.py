@@ -12,7 +12,7 @@ Funcionalidades principales:
 - Simulación para una rendija, activando un segundo borde.
 - Controles interactivos (sliders) para ajustar la longitud de onda, la distancia
   a la pantalla, el ancho de visualización y la posición/separación de los bordes.
-- Cálculo y visualización del Número de Fresnel ($N_F$) para el caso de la rendija.
+- Cálculo y visualización del Número de Fresnel (NF) para el caso de la rendija.
 - Generación de dos gráficos:
   1. Un perfil de intensidad 1D del patrón de difracción.
   2. Una representación visual 2D (mapa de calor) que simula la apariencia del
@@ -132,7 +132,7 @@ st.sidebar.slider(
 )
 st.sidebar.slider(
     "Distancia al Obstáculo (D, m)",
-    min_value=1, max_value=10.0,
+    min_value=0.01, max_value=10.0, # <-- CORREGIDO: min_value era 1, ahora es 0.01
     step=0.01, format="%.2f",
     key="D_m"
 )
@@ -142,6 +142,14 @@ st.sidebar.slider(
     step=0.1, format="%.1f",
     key="screen_mm"
 )
+
+# --- INICIO DE LA CORRECCIÓN ---
+# Lógica para evitar el error: ajusta la posición del borde si está fuera de rango.
+# Esto se ejecuta después del slider "Ancho de Visualización" y antes del slider "Posición 1er Borde".
+max_edge_pos = st.session_state.screen_mm / 2
+# La función `min` previene que el valor exceda el máximo, y `max` previene que sea menor que el mínimo.
+st.session_state.edge_1_pos_mm = max(-max_edge_pos, min(max_edge_pos, st.session_state.edge_1_pos_mm))
+# --- FIN DE LA CORRECCIÓN ---
 
 st.sidebar.markdown("---")
 st.sidebar.subheader("Configuración de Bordes")
