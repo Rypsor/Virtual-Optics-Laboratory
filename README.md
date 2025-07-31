@@ -1,6 +1,6 @@
 # Virtual Optics Laboratory
-[![Streamlit App](https://virtual-optics-laboratory-plcbvaadq4hdtm6zv75c2h.streamlit.app/) Welcome to the Virtual Optics Laboratory! This is an educational project developed with Streamlit that brings together a collection of interactive simulators to study and visualize light diffraction phenomena. The application is designed for students, educators, and physics enthusiasts who wish to explore the Fresnel (near-field) and Fraunhofer (far-field) diffraction regimes in an intuitive and visual way.
-
+Welcome to the Virtual Optics Laboratory! This is an educational project developed with Streamlit that brings together a collection of interactive simulators to study and visualize light diffraction phenomena. The application is designed for students, educators, and physics enthusiasts who wish to explore the Fresnel (near-field) and Fraunhofer (far-field) diffraction regimes in an intuitive and visual way.
+Streamlit link: https://virtual-optics-laboratory-plcbvaadq4hdtm6zv75c2h.streamlit.app/
 ## 📜 Description
 
 This laboratory contains different tools that allow for the simulation of diffraction patterns for various apertures. Each simulator offers interactive controls to modify key physical parameters such as aperture geometry, light wavelength, and observation distances, enabling a deep understanding of how these elements influence the final result.
